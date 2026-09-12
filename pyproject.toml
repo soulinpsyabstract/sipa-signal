@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sipa-signal"
+version = "0.1.0"
+description = "Strips hedging and filler from AI text into a fixed-schema signal card"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["sipa_signal"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

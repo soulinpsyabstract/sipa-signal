@@ -1,0 +1,7 @@
+# The core (sipa_signal/) has zero runtime dependencies.
+
+# Tests:
+pytest>=7
+
+# cli/ and dashboard/ will add what they need (click/typer, fastapi, etc.)
+# as those tracks get built.
