@@ -31,7 +31,7 @@ def _p(category: FillerCategory, *phrases: str) -> list[FillerPattern]:
 _RAW_PATTERNS: list[FillerPattern] = [
     *_p(FillerCategory.THROAT_CLEARING,
         "great question", "happy to help", "sure, i'd be happy to",
-        "i'd be glad to", "let's dive in", "let's take a look", "sure"),
+        "i'd be glad to", "let's dive in", "let's take a look"),
     *_p(FillerCategory.HEDGE,
         "it's worth noting", "it is worth noting", "arguably", "to some extent",
         "in some sense", "it could be argued", "one might say", "to a certain degree",
@@ -45,8 +45,8 @@ _RAW_PATTERNS: list[FillerPattern] = [
         "in my opinion", "personally, i", "i would say"),
     *_p(FillerCategory.APOLOGY,
         "i apologize", "i'm sorry", "unfortunately, i", "i must apologize"),
+    FillerPattern(FillerCategory.THROAT_CLEARING, re.compile(r"^sure[.!]?$", re.IGNORECASE)),
 ]
-
 # Longest phrase first: "sure, i'd be happy to" has to be tried before
 # "happy to help" or the shorter phrase eats part of the longer one and
 # leaves an orphan fragment ("Sure, I'd be") that isn't real content but
