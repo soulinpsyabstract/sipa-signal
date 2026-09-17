@@ -31,7 +31,7 @@ def _p(category: FillerCategory, *phrases: str) -> list[FillerPattern]:
 _RAW_PATTERNS: list[FillerPattern] = [
     *_p(FillerCategory.THROAT_CLEARING,
         "great question", "happy to help", "sure, i'd be happy to",
-        "i'd be glad to", "let's dive in", "let's take a look"),
+        "i'd be glad to", "let's dive in", "let's take a look", "sure"),
     *_p(FillerCategory.HEDGE,
         "it's worth noting", "it is worth noting", "arguably", "to some extent",
         "in some sense", "it could be argued", "one might say", "to a certain degree",
@@ -39,7 +39,7 @@ _RAW_PATTERNS: list[FillerPattern] = [
     *_p(FillerCategory.META_COMMENTARY,
         "as mentioned above", "as previously mentioned", "in conclusion",
         "let me explain", "to summarize", "with that said", "having said that",
-        "moving on to", "let's break this down"),
+        "moving on to", "let's break this down", "generally goes like this", "below is a"),
     *_p(FillerCategory.SELF_REFERENCE,
         "as an ai", "as an ai language model", "i think", "i believe",
         "in my opinion", "personally, i", "i would say"),
