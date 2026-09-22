@@ -27,7 +27,6 @@ class FillerPattern:
 def _p(category: FillerCategory, *phrases: str) -> list[FillerPattern]:
     return [FillerPattern(category, re.compile(re.escape(ph), re.IGNORECASE)) for ph in phrases]
 
-
 _RAW_PATTERNS: list[FillerPattern] = [
     *_p(FillerCategory.THROAT_CLEARING,
         "great question", "happy to help", "sure, i'd be happy to",
@@ -39,7 +38,8 @@ _RAW_PATTERNS: list[FillerPattern] = [
     *_p(FillerCategory.META_COMMENTARY,
         "as mentioned above", "as previously mentioned", "in conclusion",
         "let me explain", "to summarize", "with that said", "having said that",
-        "moving on to", "let's break this down", "generally goes like this", "below is a"),
+        "moving on to", "let's break this down", "generally goes like this", "below is a",
+        "below is", "here is a"),  # Finding 7: Added "below is" and "here is a"
     *_p(FillerCategory.SELF_REFERENCE,
         "as an ai", "as an ai language model", "i think", "i believe",
         "in my opinion", "personally, i", "i would say"),
@@ -47,6 +47,9 @@ _RAW_PATTERNS: list[FillerPattern] = [
         "i apologize", "i'm sorry", "unfortunately, i", "i must apologize"),
     FillerPattern(FillerCategory.THROAT_CLEARING, re.compile(r"^sure[.!]?$", re.IGNORECASE)),
 ]
+
+
+                  
 # Longest phrase first: "sure, i'd be happy to" has to be tried before
 # "happy to help" or the shorter phrase eats part of the longer one and
 # leaves an orphan fragment ("Sure, I'd be") that isn't real content but
